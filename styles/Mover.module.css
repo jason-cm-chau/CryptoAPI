@@ -1,0 +1,55 @@
+.row{
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.title{
+    margin-top: 1rem;
+}
+
+.mover_container{
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+.mover_wrapper{
+    display: flex;
+    width:18em;
+    border: 2px solid rgba(0,0,0,0.1);
+    margin-top: 1em;
+    padding: 1em;
+    gap: 3rem;
+    /* transform: translateX(-910px); */
+    animation-delay: 10s;
+    animation: infinite 100s slider linear;
+    background-color: #fff;
+}
+
+@keyframes slider{
+    0%{
+        transform: translateX(910px);
+    }
+    50%{
+        transform: translateX(0px);
+    }
+    100%{
+        transform: translateX(-910px);
+    }
+}
+
+.coin__details{
+    display: flex;
+    flex-direction: column;
+    width: 9.75rem;
+    gap: 0.5rem;
+}
+.mover__desc{
+    display: flex;
+    gap: 0.25rem;
+}
+
+.mover__logo{
+    width: 2.5em;
+}

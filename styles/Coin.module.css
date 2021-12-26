@@ -1,0 +1,47 @@
+.row{
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.container{
+    margin: 10vh 0;
+}
+
+.desc_wrapper{
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: space-between;
+}
+.watchlist:hover{
+    cursor: not-allowed;
+}
+
+.logo{
+    width: 2rem;
+}
+.desc{
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem 0;
+}
+
+.info{
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    background-color: #fff;
+    box-shadow: 2px 2px 10px 5px rgba(0,0,0,0.1);
+    padding: 1rem 2rem;
+}
+.price{
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.details{
+    display: flex; 
+    gap: 4rem;
+}
