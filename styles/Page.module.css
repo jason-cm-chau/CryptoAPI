@@ -29,3 +29,16 @@
     background-color: #f4f4f4;
     cursor: pointer;
 }
+
+.error{
+    /* text-align: center; */
+    width: 33%;
+    text-align: center;
+}
+.content{
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    width: 100%;
+    margin: 0 auto;
+}

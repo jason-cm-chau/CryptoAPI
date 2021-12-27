@@ -28,12 +28,11 @@ const page = ({ data }) => {
     }
     return (
         <div className={pageStyles.content}>
-            {console.log(page)}
             <Mover movers={coins} />
-            {id <= 10 ?
+            {id <= coins.length/10 ?
                 <CoinList coins={coins} page={page}></CoinList>
                 :
-                <CoinList coins={coins} page={page}></CoinList>
+                <p className={pageStyles.error}>No results</p>
             }
             <div className={pageStyles.row}>
                 <div className={pageStyles.btn_wrapper}>

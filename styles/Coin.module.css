@@ -45,3 +45,17 @@
     display: flex; 
     gap: 4rem;
 }
+
+.socials{
+    display: flex;
+    gap: 2rem;
+}
+
+.social_icon{
+    font-size: 40px;
+    color: rgb(0, 174, 255);
+}
+
+.social_icon:hover{
+    cursor: pointer;
+}

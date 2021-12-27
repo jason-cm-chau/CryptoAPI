@@ -16,3 +16,37 @@
 .home:hover{
     cursor: pointer;
 }
+
+.search_container{
+    display: flex;
+    align-items: center;
+    /* outline: 1px solid rgba(0,0,0,0.2); */
+    background-color: #f4f4f4;
+    gap: 0.5rem;
+    padding: 0.5rem 0.5rem;
+    width: 13rem;
+    font-size: 1.2rem;
+}
+
+.search{
+    border: none;
+    position: relative;
+    background-color: inherit;
+}
+
+.search:hover{
+    cursor: pointer;
+}
+
+.link_container{
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+}
+
+.show{
+    position: absolute;
+    background-color: black;
+    width: 100%;
+    height: 50px;
+}
