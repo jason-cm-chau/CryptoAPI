@@ -1,28 +1,11 @@
 import Link from 'next/link'
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import NewsItem from '../../components/NewsItem'
 import { server } from '../../config'
 import newsStyles from '../../styles/News.module.css'
 
-const News= ({ news, items =5, coin}) => {
-    const [numItems, setNumItems] = useState(items);
-    // const [pic, setImg] = useState({})
-    // const image = new Image();
-
-    // useEffect(() => {
-    //     const image = new Image();
-    //     news.map((item)=>{
-    //         image.src = item.imgURL;
-    //         image.onload = () =>{
-    //             setImg(image)
-    //         }
-    //     })
-    //     // image.src = news.imgURL;
-    //     // image.onload = () =>{
-    //     //     setImg(image)
-    //     // }
-    //     // console.log(img)
-    // })
+export default function News({ news, items =5, coin}){
+    const [numItems, setNumItems] = useState(items); 
 
     return (
         <>
@@ -77,4 +60,4 @@ export async function getStaticProps() {
         }
     }   
   }
-export default News
+// export default news

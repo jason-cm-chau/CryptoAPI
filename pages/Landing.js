@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Percent } from '../ui/Percent'
 import landingStyles from '../styles/Landing.module.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -12,9 +12,17 @@ const Landing = ({ coins }) => {
         // console.log(el)
         event.target.style.opacity = 1
     }
+    const [pic, setPic] = useState()
+    useEffect(() => {
+        const image = new Image()
+        image.src = "https://crypto.com/static/b4294bb911b426799dfae7340dba840a/ff3b2/buy-and-sell.png"
+
+        setPic(image)
+    },[])
     return (
         <div className={landingStyles.container}
-        onWheel={scrollTop}>
+        // onWheel={scrollTop}
+        >
             <main className={landingStyles.row}>
                 <section className={landingStyles.landing}>
                     <h1 className={landingStyles.title}>
@@ -31,9 +39,16 @@ const Landing = ({ coins }) => {
                             on your crypto assets</p>
                     </div>
                 </section>
-                <figure>
-                    <img src="https://crypto.com/static/b4294bb911b426799dfae7340dba840a/ff3b2/buy-and-sell.png"
+                <figure className={landingStyles.phone_wrapper}>
+                    {
+                        pic? <img src={pic.src}
                         className={landingStyles.phone}></img>
+                        :
+                        <div className={landingStyles.skeleton_phone}>
+
+                        </div>
+                    }
+                    
                 </figure>
                 <section id={landingStyles.buy}>
                     <div className={landingStyles.buy}>

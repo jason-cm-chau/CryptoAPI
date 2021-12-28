@@ -4,6 +4,8 @@ import navStyles from '../styles/Nav.module.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch } from '@fortawesome/free-solid-svg-icons' 
 import {useRouter} from 'next/router'
+import logo from '../assets/logo.svg'
+import Image from 'next/image'
 
 export const Nav = () => {
     const router = useRouter()
@@ -24,9 +26,12 @@ export const Nav = () => {
             <div className={navStyles.wrapper}>
                 <Link href="/">
                     <a className={navStyles.home}>
-                        <img src="https://crypto.com/price/_next/image.png?url=%2Fprice%2Fimages%2Flogos%2Fprice-logo-full-Xmas.svg&w=256&q=75"
+                        <Image src={logo.src}
+                        width={200}
+                        height={300}
+                        // layout='responsive'
                         className={navStyles.logo}
-                        ></img>
+                        ></Image>
                     </a>
                 </Link>
                 {

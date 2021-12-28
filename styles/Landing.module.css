@@ -112,3 +112,17 @@
     cursor: pointer;
     background-color: #f4f4f4;
 }
+
+.phone_wrapper{
+    width: 100%;
+    max-width: 25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.skeleton_phone{
+    width: 65%;
+    height: 75vh;
+    background-color: rgba(0,0,0,0.3);
+    border-radius: 2rem;
+}

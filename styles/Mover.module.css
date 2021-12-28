@@ -16,10 +16,12 @@
 }
 .mover_wrapper{
     display: flex;
-    width:18em;
+    /* width:18rem; */
+    width: 100%;
+    height: 100%;
     border: 2px solid rgba(0,0,0,0.1);
-    margin-top: 1em;
-    padding: 1em;
+    margin-top: 1rem;
+    padding: 1rem;
     gap: 3rem;
     /* transform: translateX(-910px); */
     animation-delay: 10s;
@@ -42,14 +44,43 @@
 .coin__details{
     display: flex;
     flex-direction: column;
-    width: 9.75rem;
+    width: 10rem;
     gap: 0.5rem;
 }
 .mover__desc{
     display: flex;
+    justify-content: flex-start;
+    width: 100%;
+    /* flex-wrap: nowrap; */
     gap: 0.25rem;
 }
 
 .mover__logo{
     width: 2.5em;
+}
+
+.skeleton__logo{
+    height: 2rem;
+    width: 2rem;
+    background-color: rgba(0,0,0,0.2);
+    border-radius: 100%;
+}
+
+.skeleton_symbol,
+.skeleton__price,
+.skeleton_percent,
+.skeleton_name{
+    height: 1rem;
+    width: 3rem;
+    background-color: rgba(0,0,0,0.2);
+}
+
+.skeleton_name{
+    width: 60%;
+}
+.skeleton_symbol{
+    width: 40%;
+}
+.skeleton__price{
+    width: 100%;
 }

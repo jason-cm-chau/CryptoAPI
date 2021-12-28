@@ -1,0 +1,14 @@
+
+.footer{
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    padding: 2rem 0;
+}
+.img{
+    width: 20rem;
+}
+
+.img:hover{
+    cursor: pointer;
+}

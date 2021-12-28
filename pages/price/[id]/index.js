@@ -1,18 +1,18 @@
 import React from 'react'
 // import { useRouter } from 'next/router'
 import { Percent } from '../../../ui/Percent'
-import { Price } from '../../../ui/Price'
+import { CalcPrice } from '../../../ui/Price'
 import Link from 'next/link'
 import { server } from '../../../config'
-import News from '../../news'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faTwitter} from '@fortawesome/free-brands-svg-icons'
 import {faStar} from '@fortawesome/free-regular-svg-icons'
 import {faLink} from '@fortawesome/free-solid-svg-icons'
 import coinStyles from '../../../styles/Coin.module.css'
 import { useRouter } from 'next/router'
+import Image from 'next/image'
 
-const price = ({coin, news}) => {
+const Price = ({coin}) => {
     const router = useRouter()
     const {id} = router.query
     const item = coin.coin
@@ -30,7 +30,7 @@ const price = ({coin, news}) => {
                 <>
                  <div className={coinStyles.desc_wrapper}>
                 <div className={coinStyles.desc}>
-                <img src={item.icon} alt="" className={coinStyles.logo}/>
+                <Image loader={() =>item.icon}src={item.icon} layout='fixed'width={50} height={50} alt="" className={coinStyles.logo}/>
                     <h2>{item.name}</h2>
                     <p>{item.symbol}</p>
                 </div>
@@ -60,24 +60,21 @@ const price = ({coin, news}) => {
                 <div className={coinStyles.details}>
                     <div className="detail">
                         Market Cap (USD)
-                        <h2>$<Price price={item.marketCap}/></h2>
+                        <h2>$<CalcPrice price={item.marketCap}/></h2>
                     </div>
                     <div className="detail">
                         24H VOLUME (USD)
-                        <h2>$<Price price={item.volume}/></h2>
+                        <h2>$<CalcPrice price={item.volume}/></h2>
                     </div>
                     <div className="detail">
                         Circulating Supply
-                        <h2><Price price={item.availableSupply}/> BTC</h2>
+                        <h2><CalcPrice price={item.availableSupply}/> BTC</h2>
                     </div>
                     <div className="detail">
                         Max Supply
-                        <h2><Price price={item.totalSupply}/> BTC</h2>
+                        <h2><CalcPrice price={item.totalSupply}/> BTC</h2>
                     </div>
                 </div>
-            </div>
-            <div className=''>
-                <News news={news} items={3}/>
             </div>
                 </>
                 }
@@ -98,14 +95,9 @@ export async function getServerSideProps(context){
     }).catch((err)=>console.warn('Could not find coin'))
 
     if(!res) return;
-    
-    let n = await fetch(`${server}/api/news`)
-    
-    let {news} = await n.json()
-    // let {coin} = await res.json()
 
     return {
-        props: { coin:res, news}
+        props: { coin:res}
     }
 }
 
@@ -121,4 +113,4 @@ export async function getServerSideProps(context){
 //     }
 // }
 
-export default price
+export default Price

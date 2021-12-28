@@ -1,3 +1,4 @@
+import { route } from 'next/dist/server/router';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import React, { useState, useEffect } from 'react'
@@ -6,7 +7,7 @@ import { Mover } from '../../../components/Mover';
 import { server } from '../../../config'
 import pageStyles from '../../../styles/Page.module.css'
 
-const page = ({ data }) => {
+const Page = ({ data }) => {
     let coins = data.coins;
     // let pageCounter = [0,10];
     const [page, setPage] = useState([0, 10]);
@@ -16,6 +17,8 @@ const page = ({ data }) => {
     useEffect(() => {
         setPage([page[1] * (id - 1), page[1] * id])
     }, [])
+
+//    id > coins.length/10 && setTimeout(()=>router.push('/page/1'),3000)
 
     function colorBtn(btn){
         return (btn.key === id) || (!id && btn.key==1)? 
@@ -91,4 +94,4 @@ export async function getServerSideProps(context) {
     return { props: { data } }
 }
 
-export default page
+export default Page

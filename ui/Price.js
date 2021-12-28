@@ -1,6 +1,6 @@
 import React from 'react'
 
-export const Price = ({price}) => {
+export const CalcPrice = ({price}) => {
     function MoneyFormat(labelValue) {
         // Nine Zeroes for Billions
         return Math.abs(Number(labelValue)) >= 1.0e+9
