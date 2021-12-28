@@ -3,7 +3,7 @@ import { CoinList } from '../components/CoinList';
 import { Mover } from '../components/Mover';
 import News from './news';
 import { server } from '../config';
-import Landing from './Landing';
+import Landing from '../components/Landing';
 
 export default function Home({ coins }) {
   // "https://api.coinstats.app/public/v1/coins?skip=0"
@@ -32,7 +32,9 @@ export default function Home({ coins }) {
 // }
 
 export async function getStaticProps() {
-  let res = await fetch(`${server}/api/coins`)
+  // let res = await fetch(`${server}/api/coins`)
+  let res = await fetch('https://api.coinstats.app/public/v1/coins?skip=0')
+
   let data = await res.json()
 
   return { props: { coins: data.coins } }

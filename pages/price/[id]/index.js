@@ -84,7 +84,8 @@ const Price = ({coin}) => {
 }
 
 export async function getServerSideProps(context){
-    let res = await fetch(`${server}/api/coins/${context.params.id}`)
+    // let res = await fetch(`${server}/api/coins/${context.params.id}`)
+    let res = await fetch(`https://api.coinstats.app/public/v1/coins/${context.params.id}`)
     .then((response)=>{
         if(response.ok){
             return response.json()

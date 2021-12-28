@@ -52,7 +52,10 @@ export default function News({ news, items =5, coin}){
     )
 }
 export async function getStaticProps() {
-    const res= await fetch(`${server}/api/news`)
+    // const res= await fetch(`${server}/api/news`)
+    const res= await fetch('https://api.coinstats.app/public/v1/news/trending?skip=0')
+
+    
     const data = await res.json()
 
     return { props: { 

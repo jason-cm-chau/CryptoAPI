@@ -18,8 +18,6 @@ const Page = ({ data }) => {
         setPage([page[1] * (id - 1), page[1] * id])
     }, [])
 
-//    id > coins.length/10 && setTimeout(()=>router.push('/page/1'),3000)
-
     function colorBtn(btn){
         return (btn.key === id) || (!id && btn.key==1)? 
         <button style={{backgroundColor:"#1199FA"
@@ -88,7 +86,8 @@ const Page = ({ data }) => {
 }
 
 export async function getServerSideProps(context) {
-    let res = await fetch(`${server}/api/coins/`)
+    // let res = await fetch(`${server}/api/coins/`)
+    let res = await fetch(`https://api.coinstats.app/public/v1/coins?skip=0`)
     let data = await res.json()
 
     return { props: { data } }
