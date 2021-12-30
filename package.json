@@ -1,13 +1,14 @@
 {
   "name": "next-app",
   "private": true,
-  "homepage": "https://jason-cm-chau.github.io/CryptoAPI/",
+  "homepage": "https://jason-cm-chau.github.io/CryptoAPI",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "export": "next export"
+    "export": "next export",
+    "deploy": "gh-pages -d out"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.36",
