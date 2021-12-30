@@ -13,7 +13,7 @@ function MyApp({ Component, pageProps }) {
       <Head>
         <title>Crypto App</title>
         <meta name='description' content='#1 App for everything Crypto'></meta>
-        <meta property='og:image' content="../assets/Capture.PNG"></meta>
+        <meta property='og:image' content="/assets/Capture.PNG"></meta>
       </Head>
       <Layout>
       <Component {...pageProps} />
