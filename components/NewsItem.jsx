@@ -17,14 +17,17 @@ const NewsItem = ({ item }) => {
                     <div className={newsStyles.img_wrapper}>
                         <div className={newsStyles.img_container}>
                         {(pic.icon.includes('/undefined')) ? <></> :
-                        
-                        <Image loader={()=>pic.icon}src={pic.icon} layout='fixed'
-                        width={80} height={80}
-                        className={newsStyles.logo}></Image>}
-                            <Image loader={()=> pic.imgURL}src={pic.imgURL} layout='fixed' 
-                            width={800} height={350}
+                            <div className={newsStyles.imgs}>
+                                <Image loader={()=>`${pic.icon}?w=${0}`}src={pic.icon} layout='responsive'
+                                width={150} height={10}
+                                className={newsStyles.logo}></Image>
+
+                                <Image loader={()=> `${pic.imgURL}?w=${0}`}src={pic.imgURL} layout='responsive' 
+                                width={1000} height={350}
                                 className={newsStyles.img}>
-                            </Image>
+                                </Image>
+                            </div>
+                        }
                         </div>
                     </div>
                     </div>

@@ -1,14 +1,8 @@
-import Head from 'next/head'
-import { CoinList } from '../components/CoinList';
-import { Mover } from '../components/Mover';
-import News from './news';
-import { server } from '../config';
 import Landing from '../components/Landing';
 
 export default function Home({ coins }) {
   // "https://api.coinstats.app/public/v1/coins?skip=0"
   // https://api.coinstats.app/public/v1/coins?skip=0&limit=10
-  // let coins = data.coins;
   return (
     <>
       <Landing coins={coins}/>

@@ -34,7 +34,7 @@ export const CoinList = ({ coins,page }) => {
                                 {items.rank}
                             </div>
                             <div className={coinsListStyles.coin}>
-                                <Image loader={()=>items.icon} src={items.icon} alt="" layout='fixed' width={40} height={30} className={coinsListStyles.coin__logo} />
+                                <Image loader={()=>`${items.icon}?w=${40}`} src={items.icon} alt="" layout='fixed' width={40} height={30} className={coinsListStyles.coin__logo} />
                                 <div className={coinsListStyles.coin__desc}>
                                     <p>{items.name}</p>
                                     <p>{items.symbol}</p>

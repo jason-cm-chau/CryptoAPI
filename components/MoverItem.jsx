@@ -8,18 +8,14 @@ const MoverItem = ({item}) => {
     const [pic, setPic] = useState()
 
     useEffect(()=>{
-        // const image = new Image()
-        // image.src = item.icon
-        // image.alt = ""
-
-        setPic(<Image src={item.icon} alt="" layout='fill'/>)
+        setPic(item.icon)
     },[])
     return (
         <div className={moverStyles.mover_wrapper} >
             {
                 pic?<>
                 <div className={moverStyles.coin__details}>
-                <Image loader={()=>item.icon} src={item.icon} layout='fixed' 
+                <Image loader={()=>`${pic}?w=${50}`} src={item.icon} layout='fixed' 
                 width={50} height={50}
                 alt="" className={moverStyles.mover__logo} />
                 <div className={moverStyles.mover__desc}>
